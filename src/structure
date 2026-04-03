@@ -1,0 +1,62 @@
+FoodOrderSystem/
+│
+├── src/                              ← Source code folder
+│   │
+│   ├── config/                       ← Database configuration
+│   │   └── DBConnection.java         ← PostgreSQL connection class
+│   │
+│   ├── model/                        ← Data model classes
+│   │   ├── Customer.java             ← Customer entity
+│   │   ├── Menu.java                 ← Menu item entity
+│   │   ├── Order.java                ← Order entity
+│   │   └── OrderDetails.java         ← Order details entity
+│   │
+│   ├── dao/                          ← Data Access Objects (Backend Logic)
+│   │   ├── CustomerDAO.java          ← Customer DB operations
+│   │   ├── MenuDAO.java              ← Menu DB operations
+│   │   └── OrderDAO.java             ← Order DB operations
+│   │
+│   ├── ui/                           ← User Interface (Frontend - Swing)
+│   │   ├── LoginFrame.java           ← Login window
+│   │   ├── RegisterFrame.java        ← Registration window
+│   │   ├── MenuFrame.java            ← Menu browsing window
+│   │   ├── CartFrame.java            ← Shopping cart window
+│   │   ├── OrderFrame.java           ← Order history window
+│   │   └── AdminDashboard.java       ← Admin panel window
+│   │
+│   └── TestDB.java                   ← Database test file (optional)
+│
+├── lib/                              ← External libraries (JAR files)
+│   ├── postgresql-42.7.10.jar        ← PostgreSQL JDBC driver
+│   └── servlet-api.jar               ← Servlet API (optional, for future)
+│
+├── WebContent/                       ← Web content folder (for future web version)
+│   ├── WEB-INF/
+│   │   ├── lib/                      ← JAR files for web deployment
+│   │   │   ├── postgresql-42.7.10.jar
+│   │   │   └── servlet-api.jar
+│   │   └── web.xml                   ← Web configuration
+│   ├── css/
+│   │   └── style.css                 ← Stylesheet (for web version)
+│   ├── js/
+│   │   └── script.js                 ← JavaScript (for web version)
+│   ├── login.html                    ← Login page (for web version)
+│   └── register.html                 ← Register page (for web version)
+│
+├── out/                              ← Compiled .class files (auto-generated)
+│   └── (compiled Java files)
+│
+
+
+orders.customer_id → customer.id
+order_details.order_id → orders.id
+order_details.menu_id → menu.id
+menu.type_id → menu_type.id
+rating.customer_id → customer.id
+rating.menu_id → menu.id
+payment.order_id → orders.id
+payment.paid_by → customer.id
+payment.processed_by → users.id
+site_information.user_id → users.id
+
+
